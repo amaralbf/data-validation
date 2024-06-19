@@ -1,0 +1,18 @@
+# testing
+pytest
+coverage[toml]
+hypothesis[pandas]
+tox
+
+# pre-commit
+pre-commit
+
+# type-checking
+mypy
+
+# docs
+mkdocs-material
+mkdocstrings[python]
+
+# jupyter
+ipykernel

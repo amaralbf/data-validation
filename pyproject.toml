@@ -1,0 +1,21 @@
+[tool.ruff]
+target-version = "py39"
+
+[tool.coverage.run]
+branch = true
+command_line = "-m pytest tests"
+parallel = true
+source = ["data_validation"]
+
+[tool.coverage.paths]
+source = ["src", ".tox/*/site-packages"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools"]
