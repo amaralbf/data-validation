@@ -31,11 +31,13 @@ jobs:
           python -m pip install coverage[toml] tox tox-gh-actions
       - name: "Run tox targets for ${{ matrix.python-version }}"
         run: "python -m tox"
-      - name: Upload coverage
-        uses: codecov/codecov-action@v3
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: true
           verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   run_tests_on_other_versions:
     name: "Tests Only (Python ${{ matrix.python-version }})"
     runs-on: "ubuntu-latest"
